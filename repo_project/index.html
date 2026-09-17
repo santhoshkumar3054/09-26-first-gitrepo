@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnO — Learn. Play. Conquer.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<canvas id="sc"></canvas>
+<canvas class="cfc" id="cfc"></canvas>
+<div class="W">
+
+<!-- ══════════ SPLASH / LANDING PAGE ══════════ -->
+<div id="s-splash">
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="sp-bg">
+    <div class="sp-bg-grid"></div>
+    <div class="sp-bg-vignette"></div>
+    <div class="sp-glow1"></div>
+    <div class="sp-glow2"></div>
+    <div class="sp-glow3"></div>
+  </div>
+
+  <!-- CORNER ORNAMENTS (sketch-style decorative brackets) -->
+  <div class="sp-corner sp-c-tl">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 55 5 L 5 5 L 5 55" stroke="#c9a84c" stroke-width="2" stroke-linecap="square" fill="none"/>
+      <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+    </svg>
+  </div>
+  <div class="sp-corner sp-c-tr">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 55 5 L 5 5 L 5 55" stroke="#c9a84c" stroke-width="2" stroke-linecap="square" fill="none"/>
+      <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+    </svg>
+  </div>
+  <div class="sp-corner sp-c-bl">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 55 5 L 5 5 L 5 55" stroke="#c9a84c" stroke-width="2" stroke-linecap="square" fill="none"/>
+      <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+    </svg>
+  </div>
+  <div class="sp-corner sp-c-br">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 55 5 L 5 5 L 5 55" stroke="#c9a84c" stroke-width="2" stroke-linecap="square" fill="none"/>
+      <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+    </svg>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="sp-content">
+
+    <!-- TOP RULE -->
+    <div class="sp-toprule">
+      <span class="sp-rule-line"></span>
+      <span class="sp-rule-txt">Est. 2024 &nbsp;·&nbsp; Interactive Learning Platform</span>
+      <span class="sp-rule-line r"></span>
+    </div>
+
+    <!-- LOGO MARK from sketch — Lo with smile curve, in rounded square -->
+    <div class="sp-logomark">
+      <svg width="160" height="160" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lgMain" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f5e4a0"/>
+            <stop offset="35%" stop-color="#d4af37"/>
+            <stop offset="70%" stop-color="#c9a84c"/>
+            <stop offset="100%" stop-color="#b8922a"/>
+          </linearGradient>
+          <linearGradient id="lgSmile" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#b8922a"/>
+            <stop offset="50%" stop-color="#f0d080"/>
+            <stop offset="100%" stop-color="#b8922a"/>
+          </linearGradient>
+          <linearGradient id="lgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0e0c02"/>
+            <stop offset="100%" stop-color="#040300"/>
+          </linearGradient>
+          <filter id="fGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+          <filter id="fGlowStr" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3.5" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+
+        <!-- Card: black background -->
+        <rect width="100" height="100" rx="22" fill="url(#lgBg)"/>
+
+        <!-- Outer gold border -->
+        <rect x="1" y="1" width="98" height="98" rx="21.5" fill="none" stroke="url(#lgMain)" stroke-width="3.5" filter="url(#fGlow)"/>
+        <!-- Inner subtle border -->
+        <rect x="5.5" y="5.5" width="89" height="89" rx="18" fill="none" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+
+        <!-- L — tall vertical + horizontal foot, like the sketch -->
+        <line x1="24" y1="16" x2="24" y2="66" stroke="url(#lgMain)" stroke-width="9" stroke-linecap="round" filter="url(#fGlow)"/>
+        <line x1="24" y1="66" x2="52" y2="66" stroke="url(#lgMain)" stroke-width="9" stroke-linecap="round" filter="url(#fGlow)"/>
+
+        <!-- o — circle, sitting next to L, like sketch -->
+        <circle cx="70" cy="46" r="14" fill="none" stroke="url(#lgMain)" stroke-width="6.5" filter="url(#fGlowStr)"/>
+
+        <!-- Smile / swoosh curve — KEY element from sketch, runs below both letters -->
+        <path d="M 18 78 Q 35 92 55 88 Q 72 84 84 74"
+              stroke="url(#lgSmile)" stroke-width="5.5"
+              fill="none" stroke-linecap="round"
+              filter="url(#fGlowStr)"/>
+
+        <!-- Four corner micro dots -->
+        <circle cx="10" cy="10" r="2.2" fill="rgba(201,168,76,.5)"/>
+        <circle cx="90" cy="10" r="2.2" fill="rgba(201,168,76,.5)"/>
+        <circle cx="10" cy="90" r="2.2" fill="rgba(201,168,76,.5)"/>
+        <circle cx="90" cy="90" r="2.2" fill="rgba(201,168,76,.5)"/>
+      </svg>
+    </div>
+
+    <!-- BRAND NAME -->
+    <div class="sp-brand">
+      <span class="sb-l">Learn</span><span class="sb-o">O</span>
+    </div>
+
+    <!-- PRIMARY TAGLINE — exactly from sketch: "Learn from 0." -->
+    <div class="sp-tagline">Learn from <span class="sp-zero">0</span>.</div>
+
+    <!-- GOLD DIVIDER WITH GEM -->
+    <div class="sp-divider">
+      <span class="sp-div-l"></span>
+      <span class="sp-div-gem">◆</span>
+      <span class="sp-div-r"></span>
+    </div>
+
+    <!-- SUB COPY -->
+    <div class="sp-sub">Quizzes &nbsp;·&nbsp; Puzzles &nbsp;·&nbsp; Games &nbsp;·&nbsp; AI Tutor</div>
+
+    <!-- GET STARTED BUTTON — from sketch with arrow circle -->
+    <div class="sp-cta-wrap">
+      <button class="sp-btn" onclick="enterApp()">
+        Get Started
+        <span class="sp-btn-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M 3 7 L 11 7 M 8 4 L 11 7 L 8 10" stroke="#040300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <!-- STATS -->
+    <div class="sp-stats">
+      <div class="sp-stat-item">
+        <div class="sp-stat-n" id="sp-cm">0</div>
+        <div class="sp-stat-l">Modules</div>
+      </div>
+      <span class="sp-stat-dot">◆</span>
+      <div class="sp-stat-item">
+        <div class="sp-stat-n" id="sp-cp2">0</div>
+        <div class="sp-stat-l">Puzzles</div>
+      </div>
+      <span class="sp-stat-dot">◆</span>
+      <div class="sp-stat-item">
+        <div class="sp-stat-n" id="sp-cq">0</div>
+        <div class="sp-stat-l">Questions</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VERSION -->
+  <div class="sp-version">LearnO v1.0 &nbsp;·&nbsp; Interactive Learning Platform</div>
+
+  <!-- SCROLLING TICKER -->
+  <div class="sp-ticker">
+    <div class="sp-ticker-inner">
+      <span class="sp-ticker-item">Quizzes</span>
+      <span class="sp-ticker-item">Code Puzzles</span>
+      <span class="sp-ticker-item">Snake Game</span>
+      <span class="sp-ticker-item">XP System</span>
+      <span class="sp-ticker-item">Leaderboards</span>
+      <span class="sp-ticker-item">AI Companion Cammy</span>
+      <span class="sp-ticker-item">Achievements</span>
+      <span class="sp-ticker-item">Learn from 0</span>
+      <span class="sp-ticker-item">Quizzes</span>
+      <span class="sp-ticker-item">Code Puzzles</span>
+      <span class="sp-ticker-item">Snake Game</span>
+      <span class="sp-ticker-item">XP System</span>
+      <span class="sp-ticker-item">Leaderboards</span>
+      <span class="sp-ticker-item">AI Companion Cammy</span>
+      <span class="sp-ticker-item">Achievements</span>
+      <span class="sp-ticker-item">Learn from 0</span>
+    </div>
+  </div>
+
+</div>
+
+
+
+<nav>
+  <div class="logo" onclick="gS('home')">Learn<span>O</span></div>
+  <ul class="ntabs">
+    <li><button onclick="gS('home')" id="tb-home" class="active">HOME</button></li>
+    <li><button onclick="gS('learn')" id="tb-learn">LEARN</button></li>
+    <li><button onclick="gS('kmap')" id="tb-kmap">🗺️ MAP</button></li>
+    <li><button onclick="gS('quiz')" id="tb-quiz">QUIZ</button></li>
+    <li><button onclick="gS('puzzle')" id="tb-puzzle">PUZZLES</button></li>
+    <li><button onclick="gS('games')" id="tb-games">🎮 GAMES</button></li>
+    <li><button onclick="gS('lb')" id="tb-lb">RANKS</button></li>
+    <li><button onclick="gS('ach')" id="tb-ach">BADGES</button></li>
+    <li><button onclick="gS('vault')" id="tb-vault">📁 VAULT</button></li>
+  </ul>
+  <div class="theme-toggle">
+    <span class="t-icon" id="t-moon">🌙</span>
+    <label class="t-switch" title="Toggle light/dark mode">
+      <input type="checkbox" id="theme-chk" onchange="toggleTheme()">
+      <div class="t-track"></div>
+      <div class="t-thumb"></div>
+    </label>
+    <span class="t-icon" id="t-sun">☀️</span>
+  </div>
+  <button id="profile-nav-btn" onclick="SUPA_USER?showProfileCard():showAuthModal('login')" title="View Profile" style="
+    font-size:1.15rem;background:none;border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;width:36px;height:36px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .2s;flex-shrink:0;
+  "
+  onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.background='rgba(201,168,76,.1)';"
+  onmouseout="this.style.borderColor='rgba(255,255,255,.12)';this.style.background='none';"
+  >👤</button>
+  <div class="xpw">⚡<span id="xt">0</span>XP<div class="xpb"><div class="xpf" id="xf"></div></div>Lv.<span id="lvl">1</span></div>
+</nav>
+
+<!-- HOME -->
+<div id="s-home" class="scr active">
+  <div class="hero">
+    <div class="badge">🚀 INTERACTIVE LEARNING PLATFORM</div>
+    <h1 class="ht"><div class="l1">LEARN.</div><div class="l2">O.</div></h1>
+    <p class="hs">Master programming through gamified challenges, AI-powered quizzes, and hands-on code puzzles. Every line of code earns you glory.</p>
+    <div style="width:120px;height:1px;background:var(--goldgs);margin:.5rem auto 2rem;box-shadow:0 0 10px rgba(201,168,76,.4);border-radius:99px"></div>
+    <div class="cg">
+      <button class="bp" onclick="gS('learn')">▶ START LEARNING</button>
+      <button class="bg2" onclick="gS('quiz')">⚡ TAKE A QUIZ</button>
+    </div>
+    <div class="sr">
+      <div class="si"><div class="sn" id="cm">0</div><div class="sl">MODULES</div></div>
+      <div class="si"><div class="sn" id="cp2">0</div><div class="sl">PUZZLES</div></div>
+      <div class="si"><div class="sn" id="cq">0</div><div class="sl">QUIZ Qs</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEARN -->
+<div id="s-learn" class="scr">
+  <div class="sh"><h2 class="st">LEARNING <span>MODULES</span></h2><p class="ss">Choose a track and start earning XP</p></div>
+  <div class="mg" id="mg" style="display:flex;flex-direction:column;align-items:stretch;width:100%;"></div>
+</div>
+
+<!-- KNOWLEDGE MAP -->
+<div id="s-kmap" class="scr">
+<div id="km-wrap">
+  <div id="km-header">
+    <h2 class="st">KNOWLEDGE <span>MAP</span></h2>
+    <div class="section-divider"></div>
+    <p class="ss" style="margin-top:.5rem">Navigate your learning graph — unlock skills, follow paths</p>
+  </div>
+  <div id="km-controls">
+    <button class="km-ctrl-btn active" id="km-filter-all" onclick="kmFilter('all')">ALL</button>
+    <button class="km-ctrl-btn" id="km-filter-available" onclick="kmFilter('available')">AVAILABLE</button>
+    <button class="km-ctrl-btn" id="km-filter-done" onclick="kmFilter('done')">COMPLETED</button>
+    <button class="km-ctrl-btn" id="km-filter-locked" onclick="kmFilter('locked')">LOCKED</button>
+    <button class="km-ctrl-btn" id="km-filter-review" onclick="kmFilter('review')">⚠ REVIEW</button>
+    <button class="km-ctrl-btn" onclick="kmResetView()">⟳ RESET VIEW</button>
+  </div>
+  <div id="km-legend">
+    <span class="km-leg"><span class="km-leg-dot" style="background:#27c93f;box-shadow:0 0 6px #27c93f"></span>COMPLETED</span>
+    <span class="km-leg"><span class="km-leg-dot" style="background:#c9a84c;box-shadow:0 0 6px rgba(201,168,76,.8)"></span>AVAILABLE</span>
+    <span class="km-leg"><span class="km-leg-dot" style="background:#333;border:1px solid #555"></span>LOCKED</span>
+    <span class="km-leg"><span class="km-leg-dot" style="background:#e05252;box-shadow:0 0 6px rgba(224,82,82,.7)"></span>NEEDS REVIEW</span>
+  </div>
+  <div id="km-canvas-wrap">
+    <svg id="km-svg" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div id="km-tooltip">
+      <div class="km-tt-title" id="km-tt-title"></div>
+      <div class="km-tt-desc" id="km-tt-desc"></div>
+      <div class="km-tt-status" id="km-tt-status"></div>
+    </div>
+  </div>
+  <div id="km-detail-panel">
+    <div class="km-dp-header">
+      <span class="km-dp-icon" id="km-dp-icon">📚</span>
+      <div><div class="km-dp-title" id="km-dp-title"></div><div class="km-dp-sub" id="km-dp-sub"></div></div>
+    </div>
+    <div class="km-dp-body" id="km-dp-body"></div>
+    <div id="km-dp-prereq-wrap" style="display:none">
+      <div style="font-family:'Cinzel',serif;font-size:.6rem;color:var(--td);letter-spacing:2px;margin-bottom:.4rem">PREREQUISITES</div>
+      <div class="km-dp-prereqs" id="km-dp-prereqs"></div>
+    </div>
+    <div class="km-rec-box" id="km-rec-box" style="display:none"><b>🤖 ADAPTIVE RECOMMENDATION</b><span id="km-rec-text"></span></div>
+    <div class="km-dp-actions" id="km-dp-actions"></div>
+  </div>
+</div>
+</div>
+
+<!-- MEMORY GAME SCREEN -->
+<div id="memory-screen" style="display:none;">
+  <div class="sh" style="padding:1rem 0 1.2rem">
+    <h2 class="st">🔮 CODE <span>MEMORY</span></h2>
+    <p class="ss">Flip cards and match code snippets to their outputs. Train your visual code memory!</p>
+  </div>
+  <div style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;padding:0 1rem;max-width:900px;margin:0 auto;">
+    <div style="width:100%;display:flex;gap:1rem;justify-content:center;margin-bottom:.8rem;flex-wrap:wrap;">
+      <div class="snake-panel" style="min-width:100px;text-align:center"><div class="sp-label">MOVES</div><div class="sp-val" id="mem-moves">0</div></div>
+      <div class="snake-panel" style="min-width:100px;text-align:center"><div class="sp-label">MATCHED</div><div class="sp-val" id="mem-matches">0 / 8</div></div>
+      <div class="snake-panel" style="min-width:100px;text-align:center"><div class="sp-label">TIME</div><div class="sp-val" id="mem-time">0s</div></div>
+    </div>
+    <div id="mem-board" style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;max-width:720px;width:100%;"></div>
+  </div>
+  <div style="text-align:center;margin-top:1.2rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;">
+    <button onclick="initMemory()" style="font-family:'Cinzel',serif;font-size:.7rem;padding:.5rem 1.4rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:6px;color:#080600;cursor:pointer;font-weight:700;letter-spacing:1px;">↺ NEW GAME</button>
+    <button onclick="showMemoryHub()" style="font-family:'Cinzel',serif;font-size:.7rem;padding:.5rem 1.4rem;background:none;border:1px solid rgba(201,168,76,.35);color:var(--td);border-radius:6px;cursor:pointer;letter-spacing:1px;">&#8592; BACK</button>
+  </div>
+</div>
+
+<!-- TOWER BUILD SCREEN -->
+<div id="tower-screen" style="display:none;">
+  <div class="sh" style="padding:1rem 0 1.2rem">
+    <h2 class="st">&#127959; TOWER <span>BUILD</span></h2>
+    <p class="ss">Answer correctly to drop blocks. Wrong answers shrink them. Stack 15 blocks to win!</p>
+  </div>
+  <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;align-items:flex-start;padding:0 1rem;max-width:900px;margin:0 auto;">
+    <div style="display:flex;flex-direction:column;gap:.6rem;min-width:100px;">
+      <div class="snake-panel" style="text-align:center"><div class="sp-label">SCORE</div><div class="sp-val" id="tb-score">0</div></div>
+      <div class="snake-panel" style="text-align:center"><div class="sp-label">HEIGHT</div><div class="sp-val" id="tb-height">0</div></div>
+      <div class="snake-panel" style="text-align:center"><div class="sp-label">STREAK</div><div class="sp-val" style="color:var(--np)" id="tb-streak">0 &#128293;</div></div>
+      <div class="snake-panel" style="text-align:center"><div class="sp-label">XP</div><div class="sp-val" id="tb-xp">0</div></div>
+    </div>
+    <div style="position:relative;flex-shrink:0;">
+      <canvas id="tower-canvas" style="border-radius:10px;border:1px solid rgba(201,168,76,.25);display:block;"></canvas>
+      <div id="tower-overlay" style="position:absolute;inset:0;border-radius:10px;background:rgba(0,0,0,.88);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;gap:.8rem;">
+        <div style="font-size:3rem;filter:drop-shadow(0 0 20px #c9a84c)">&#127959;</div>
+        <div style="font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--ny);">TOWER BUILD</div>
+        <div style="font-size:.82rem;color:var(--td);line-height:1.6;max-width:220px;">A block swings above your tower. Answer correctly to drop it on top. Wrong = block shrinks. Miss = COLLAPSE!</div>
+        <button onclick="startTower()" style="font-family:'Cinzel Decorative',serif;font-size:.78rem;font-weight:700;padding:.7rem 2rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,.4);margin-top:.4rem;">&#9654; BUILD NOW</button>
+      </div>
+    </div>
+    <div style="flex:1;min-width:200px;max-width:300px;">
+      <div style="font-family:'Cinzel',serif;font-size:.6rem;color:var(--nc);letter-spacing:2px;margin-bottom:.6rem;">&#10067; ANSWER TO DROP</div>
+      <div id="tower-q-area" style="background:linear-gradient(145deg,#13110a,#0f0d02);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:.9rem;display:none;"></div>
+      <div style="margin-top:1rem;font-family:'Cinzel',serif;font-size:.6rem;color:var(--td);line-height:1.8;">
+        <div style="color:var(--nc);margin-bottom:.3rem;letter-spacing:2px;">HOW TO PLAY</div>
+        &#127959; Block swings left and right<br>
+        &#9989; Correct = full block drops<br>
+        &#10060; Wrong = block shrinks!<br>
+        &#128168; Miss the tower = COLLAPSE<br>
+        &#127942; Stack 15 blocks to WIN
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:1rem;">
+    <button onclick="showTowerHub()" style="font-family:'Cinzel',serif;font-size:.7rem;padding:.5rem 1.4rem;background:none;border:1px solid rgba(201,168,76,.35);color:var(--td);border-radius:6px;cursor:pointer;letter-spacing:1px;">&#8592; BACK TO GAMES</button>
+  </div>
+</div>
+
+
+
+<!-- TRUE OR FALSE BLITZ SCREEN -->
+<div id="tf-screen" style="display:none;">
+  <div class="sh" style="padding:1rem 0 1rem">
+    <h2 class="st">⚡ TRUE OR FALSE <span>BLITZ</span></h2>
+    <p class="ss">60 seconds. Rapid fire statements. TRUE or FALSE as fast as you can!</p>
+  </div>
+  <div style="max-width:600px;margin:0 auto;padding:0 1rem 3rem;">
+
+    <!-- Start screen -->
+    <div id="tf-start-screen" style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;padding:2rem 0;">
+      <div style="font-size:3rem;">⚡</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--ny);text-align:center;">60 seconds · Rapid fire · Streak multiplier</div>
+      <div style="font-size:.82rem;color:var(--td);text-align:center;line-height:1.7;max-width:380px;">Statements about coding flash on screen. Tap TRUE or FALSE before the next one appears. Build a streak for bonus XP!</div>
+      <button onclick="startTrueFalse()" style="font-family:'Cinzel Decorative',serif;font-size:.82rem;font-weight:700;padding:.85rem 2.5rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,.4);">⚡ START BLITZ</button>
+      <button onclick="showTFHub()" style="font-family:'Cinzel',serif;font-size:.65rem;padding:.4rem 1rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--td);border-radius:6px;cursor:pointer;">← BACK</button>
+    </div>
+
+    <!-- Game area -->
+    <div id="tf-game-area" style="display:none;">
+      <!-- Stats bar -->
+      <div style="display:flex;gap:.8rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap;">
+        <div class="snake-panel" style="min-width:90px;text-align:center;padding:.6rem .8rem"><div class="sp-label">TIME</div><div class="sp-val" id="tf-timer" style="color:#27c93f;font-size:1.4rem;">60s</div></div>
+        <div class="snake-panel" style="min-width:90px;text-align:center;padding:.6rem .8rem"><div class="sp-label">SCORE</div><div class="sp-val" id="tf-score">0</div></div>
+        <div class="snake-panel" style="min-width:90px;text-align:center;padding:.6rem .8rem"><div class="sp-label">STREAK</div><div class="sp-val" style="color:var(--np)" id="tf-streak">0</div></div>
+      </div>
+      <!-- Statement card -->
+      <div style="background:linear-gradient(145deg,#13110a,#0f0d02);border:1px solid rgba(201,168,76,.25);border-radius:14px;padding:1.8rem 1.5rem;text-align:center;margin-bottom:1rem;min-height:100px;display:flex;align-items:center;justify-content:center;">
+        <div id="tf-statement" style="font-size:1rem;font-weight:700;line-height:1.6;color:var(--tm);"></div>
+      </div>
+      <!-- Feedback -->
+      <div id="tf-feedback" style="text-align:center;font-size:.82rem;margin-bottom:.8rem;min-height:1.4rem;opacity:0;transition:opacity .2s;font-weight:700;"></div>
+      <!-- TRUE / FALSE buttons -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;">
+        <button id="tf-true-btn" onclick="answerTF(true)" style="font-family:'Cinzel Decorative',serif;font-size:1rem;font-weight:900;padding:1.2rem;border-radius:12px;cursor:pointer;border:2px solid rgba(39,201,63,.4);background:rgba(39,201,63,.12);color:#27c93f;transition:all .15s;letter-spacing:2px;">✓ TRUE</button>
+        <button id="tf-false-btn" onclick="answerTF(false)" style="font-family:'Cinzel Decorative',serif;font-size:1rem;font-weight:900;padding:1.2rem;border-radius:12px;cursor:pointer;border:2px solid rgba(224,82,82,.4);background:rgba(224,82,82,.12);color:#e05252;transition:all .15s;letter-spacing:2px;">✗ FALSE</button>
+      </div>
+    </div>
+
+    <!-- Result screen -->
+    <div id="tf-result-screen" style="display:none;flex-direction:column;align-items:center;gap:1rem;padding:2rem 0;">
+      <div style="font-size:3rem;">🏆</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--ny);">BLITZ COMPLETE!</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;width:100%;max-width:360px;">
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">SCORE</div><div class="sp-val" id="tf-res-score">0</div></div>
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">ACCURACY</div><div class="sp-val" id="tf-res-acc">0%</div></div>
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">BEST STREAK</div><div class="sp-val" id="tf-res-streak">0</div></div>
+        <div class="snake-panel" style="text-align:center;background:rgba(201,168,76,.1)"><div class="sp-label">XP EARNED</div><div class="sp-val" style="color:var(--np)" id="tf-res-xp">+0</div></div>
+      </div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;">
+        <button onclick="startTrueFalse()" style="font-family:'Cinzel Decorative',serif;font-size:.75rem;padding:.65rem 1.8rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;font-weight:700;">🔄 PLAY AGAIN</button>
+        <button onclick="showTFHub()" style="font-family:'Cinzel',serif;font-size:.65rem;padding:.65rem 1.2rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--td);border-radius:8px;cursor:pointer;">← BACK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FILL THE BLANK SCREEN -->
+<div id="ftb-screen" style="display:none;">
+  <div class="sh" style="padding:1rem 0 1rem">
+    <h2 class="st">🔡 FILL THE <span>BLANK</span></h2>
+    <p class="ss">Type the missing word in the code snippet before time runs out!</p>
+  </div>
+  <div style="max-width:620px;margin:0 auto;padding:0 1rem 3rem;">
+
+    <!-- Start screen -->
+    <div id="ftb-start-screen" style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;padding:2rem 0;">
+      <div style="font-size:3rem;">🔡</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--ny);text-align:center;">15 seconds per question · Type exact answer · Streak bonus XP</div>
+      <div style="font-size:.82rem;color:var(--td);text-align:center;line-height:1.7;max-width:380px;">A code snippet with a blank appears. Type the exact missing word and hit Enter. Case insensitive — just get the word right!</div>
+      <button onclick="startFillBlank()" style="font-family:'Cinzel Decorative',serif;font-size:.82rem;font-weight:700;padding:.85rem 2.5rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,.4);">🔡 START</button>
+      <button onclick="showFTBHub()" style="font-family:'Cinzel',serif;font-size:.65rem;padding:.4rem 1rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--td);border-radius:6px;cursor:pointer;">← BACK</button>
+    </div>
+
+    <!-- Game area -->
+    <div id="ftb-game-area" style="display:none;">
+      <!-- Stats -->
+      <div style="display:flex;gap:.7rem;justify-content:center;margin-bottom:.9rem;flex-wrap:wrap;">
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">SCORE</div><div class="sp-val" id="ftb-score">0</div></div>
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">STREAK</div><div class="sp-val" style="color:var(--np)" id="ftb-streak-display">0</div></div>
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">QUESTION</div><div class="sp-val" id="ftb-progress">1/25</div></div>
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">TIME</div><div class="sp-val" id="ftb-timer-num" style="color:var(--ny)">15s</div></div>
+      </div>
+      <!-- Timer bar -->
+      <div style="height:5px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;margin-bottom:1rem;">
+        <div id="ftb-timer-bar-fill" style="height:100%;width:100%;background:#27c93f;border-radius:99px;transition:width .9s linear;"></div>
+      </div>
+      <!-- Code snippet -->
+      <div style="background:linear-gradient(145deg,#0a0e00,#050800);border:1px solid rgba(100,200,100,.2);border-radius:10px;padding:1.2rem 1.4rem;margin-bottom:.7rem;font-family:'Space Mono',monospace;font-size:.92rem;color:#a0e880;line-height:1.8;" id="ftb-code"></div>
+      <!-- Hint -->
+      <div id="ftb-hint" style="font-size:.75rem;color:var(--td);margin-bottom:.8rem;font-style:italic;"></div>
+      <!-- Input -->
+      <div style="display:flex;gap:.6rem;">
+        <input id="ftb-input" type="text" placeholder="Type your answer..." autocomplete="off" spellcheck="false"
+          style="flex:1;padding:.75rem 1rem;background:rgba(201,168,76,.06);border:1.5px solid rgba(201,168,76,.35);border-radius:8px;color:var(--tm);font-family:'Space Mono',monospace;font-size:.9rem;outline:none;caret-color:#c9a84c;"
+          onfocus="this.style.borderColor='#c9a84c'"
+          onkeydown="if(event.key==='Enter')submitFTB()"/>
+        <button onclick="submitFTB()" style="font-family:'Cinzel',serif;font-size:.7rem;padding:.75rem 1.2rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;font-weight:700;letter-spacing:1px;">CHECK</button>
+      </div>
+      <!-- Feedback -->
+      <div id="ftb-feedback" style="margin-top:.6rem;font-size:.8rem;font-weight:700;min-height:1.2rem;opacity:0;transition:opacity .2s;"></div>
+    </div>
+
+    <!-- Result screen -->
+    <div id="ftb-result-screen" style="display:none;flex-direction:column;align-items:center;gap:1rem;padding:2rem 0;">
+      <div style="font-size:3rem;">🎯</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--ny);">ROUND COMPLETE!</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;width:100%;max-width:360px;">
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">SCORE</div><div class="sp-val" id="ftb-res-score">0</div></div>
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">CORRECT</div><div class="sp-val" id="ftb-res-correct">0/25</div></div>
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">BEST STREAK</div><div class="sp-val" id="ftb-res-streak">0</div></div>
+        <div class="snake-panel" style="text-align:center;background:rgba(201,168,76,.1)"><div class="sp-label">XP EARNED</div><div class="sp-val" style="color:var(--np)" id="ftb-res-xp">+0</div></div>
+      </div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;">
+        <button onclick="startFillBlank()" style="font-family:'Cinzel Decorative',serif;font-size:.75rem;padding:.65rem 1.8rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;font-weight:700;">🔄 PLAY AGAIN</button>
+        <button onclick="showFTBHub()" style="font-family:'Cinzel',serif;font-size:.65rem;padding:.65rem 1.2rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--td);border-radius:8px;cursor:pointer;">← BACK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CODE PATH SCREEN -->
+<div id="cp-screen" style="display:none;">
+  <div class="sh" style="padding:1rem 0 1rem">
+    <h2 class="st">🗺️ CODE <span>PATH</span></h2>
+    <p class="ss">Navigate the maze. ❓ junctions ask questions — answer right to pass, wrong = wall blocks!</p>
+  </div>
+  <div style="max-width:900px;margin:0 auto;padding:0 1rem 3rem;">
+
+    <!-- Start screen -->
+    <div id="cp-start-screen" style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;padding:2rem 0;">
+      <div style="font-size:3rem;">🗺️</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--ny);text-align:center;">3 Levels · Arrow Keys or WASD · Answer to unlock paths</div>
+      <div style="font-size:.82rem;color:var(--td);text-align:center;line-height:1.7;max-width:400px;">Navigate the dark maze to reach 🏁. When you hit a ❓ junction, answer the coding question. Correct = path opens. Wrong = that junction becomes a wall forever. Find another way!</div>
+      <button onclick="initCodePath(1)" style="font-family:'Cinzel Decorative',serif;font-size:.82rem;font-weight:700;padding:.85rem 2.5rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,.4);">🗺️ ENTER MAZE</button>
+      <button onclick="showCPHub()" style="font-family:'Cinzel',serif;font-size:.65rem;padding:.4rem 1rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--td);border-radius:6px;cursor:pointer;">← BACK</button>
+    </div>
+
+    <!-- Game area -->
+    <div id="cp-game-area" style="display:none;">
+      <!-- Stats -->
+      <div style="display:flex;gap:.7rem;justify-content:center;margin-bottom:.9rem;flex-wrap:wrap;">
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">LEVEL</div><div class="sp-val" style="color:var(--ny)" id="cp-level-display">1</div></div>
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">SCORE</div><div class="sp-val" id="cp-score">0</div></div>
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">MOVES</div><div class="sp-val" id="cp-moves">0</div></div>
+        <div class="snake-panel" style="min-width:80px;text-align:center;padding:.5rem .7rem"><div class="sp-label">WRONG</div><div class="sp-val" style="color:#e05252" id="cp-wrong">0</div></div>
+      </div>
+
+      <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;align-items:flex-start;">
+        <!-- Maze board -->
+        <div>
+          <div id="cp-board" style="display:grid;gap:2px;margin:0 auto;"></div>
+          <!-- D-pad for mobile -->
+          <div style="display:grid;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:4px;margin:1rem auto 0;width:fit-content;">
+            <div></div>
+            <button onclick="moveCPPlayer(-1,0)" style="font-size:1.1rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:8px;cursor:pointer;color:var(--ny);">▲</button>
+            <div></div>
+            <button onclick="moveCPPlayer(0,-1)" style="font-size:1.1rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:8px;cursor:pointer;color:var(--ny);">◄</button>
+            <button onclick="moveCPPlayer(1,0)" style="font-size:1.1rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:8px;cursor:pointer;color:var(--ny);">▼</button>
+            <button onclick="moveCPPlayer(0,1)" style="font-size:1.1rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:8px;cursor:pointer;color:var(--ny);">►</button>
+          </div>
+        </div>
+
+        <!-- Question panel (hidden until junction hit) -->
+        <div id="cp-q-panel" style="display:none;background:linear-gradient(145deg,#13110a,#0f0d02);border:1px solid rgba(97,218,251,.3);border-radius:12px;padding:1rem;max-width:280px;width:100%;">
+          <div style="font-family:'Cinzel',serif;font-size:.58rem;color:#61dafb;letter-spacing:2px;margin-bottom:.6rem;">❓ JUNCTION — ANSWER TO PASS</div>
+          <div id="cp-q-text" style="font-size:.82rem;font-weight:700;margin-bottom:.8rem;line-height:1.5;color:var(--tm);"></div>
+          <div id="cp-q-opts" style="display:flex;flex-direction:column;gap:.4rem;"></div>
+          <div id="cp-q-feedback" style="display:none;margin-top:.5rem;font-size:.75rem;border-radius:6px;padding:.4rem .6rem;"></div>
+        </div>
+
+        <!-- Legend -->
+        <div style="font-family:'Cinzel',serif;font-size:.58rem;color:var(--td);line-height:2;letter-spacing:1px;">
+          <div style="color:var(--nc);margin-bottom:.3rem;">LEGEND</div>
+          😎 You<br>
+          ❓ Junction — answer Q<br>
+          🏁 Exit — reach it!<br>
+          ⬛ Wall — blocked<br>
+          🟫 Visited path<br><br>
+          <div style="color:var(--nc);margin-bottom:.2rem;">CONTROLS</div>
+          Arrow keys or WASD
+        </div>
+      </div>
+    </div>
+
+    <!-- Result screen -->
+    <div id="cp-result-screen" style="display:none;flex-direction:column;align-items:center;gap:1rem;padding:2rem 0;">
+      <div style="font-size:3rem;">🗺️</div>
+      <div style="font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--ny);">ALL PATHS CONQUERED!</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;width:100%;max-width:360px;">
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">SCORE</div><div class="sp-val" id="cp-res-score">0</div></div>
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">MOVES</div><div class="sp-val" id="cp-res-moves">0</div></div>
+        <div class="snake-panel" style="text-align:center"><div class="sp-label">WRONG ANS</div><div class="sp-val" style="color:#e05252" id="cp-res-wrong">0</div></div>
+        <div class="snake-panel" style="text-align:center;background:rgba(201,168,76,.1)"><div class="sp-label">XP EARNED</div><div class="sp-val" style="color:var(--np)" id="cp-res-xp">+0</div></div>
+      </div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;">
+        <button onclick="initCodePath(1)" style="font-family:'Cinzel Decorative',serif;font-size:.75rem;padding:.65rem 1.8rem;background:linear-gradient(135deg,#c9a84c,#e8c97a);border:none;border-radius:8px;color:#080600;cursor:pointer;font-weight:700;">🔄 PLAY AGAIN</button>
+        <button onclick="showCPHub()" style="font-family:'Cinzel',serif;font-size:.65rem;padding:.65rem 1.2rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--td);border-radius:8px;cursor:pointer;">← BACK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- QUIZ -->
+<div id="s-quiz" class="scr">
+  <div id="qts" style="max-width:680px;margin:0 auto;padding:2rem 1.5rem;">
+    <div class="sh" style="padding:1rem 0 2rem"><h2 class="st">⚡ QUICK <span>QUIZ</span></h2><p class="ss">Pick a topic and test your knowledge</p></div>
+    <div id="qtg" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem;"></div>
+  </div>
+  <div id="qa" style="display:none;"><div id="qi"></div></div>
+</div>
+
+<!-- PUZZLE -->
+<div id="s-puzzle" class="scr">
+  <div id="plv">
+    <div class="sh"><h2 class="st">🧩 CODE <span>PUZZLES</span></h2><p class="ss">Fix bugs. Build functions. Conquer challenges.</p></div>
+    <div class="cl" id="cll"></div>
+  </div>
+  <div id="pwv" style="display:none;"><div id="pi"></div></div>
+</div>
+
+<!-- GAMES -->
+<div id="s-games" class="scr">
+  <div id="games-hub"></div>
+
+<div id="snake-screen">
+  <div class="sh" style="padding:1rem 0 1.5rem">
+    <h2 class="st">🐍 SNAKE <span>QUEST</span></h2>
+    <p class="ss">4 answer apples spawn on the board. Steer the snake to EAT the correct one! Wrong apple = shrink. Hit wall = shrink. Too small = 💥 BAMM!</p>
+  </div>
+  <div class="snake-layout">
+    <div class="snake-side">
+      <div class="snake-panel"><div class="sp-label">SCORE</div><div class="sp-val sp-score" id="sn-score">0</div></div>
+      <div class="snake-panel"><div class="sp-label">LEVEL</div><div class="sp-val sp-lvl" id="sn-level">1</div></div>
+      <div class="snake-panel"><div class="sp-label">XP EARNED</div><div class="sp-val sp-xp" id="sn-xp">0</div></div>
+      <div class="snake-panel snake-lives-panel"><div class="sp-label">LIVES</div><div class="sp-val sp-lives" id="sn-lives">🟢🟢🟢</div></div>
+    </div>
+    <div class="snake-center">
+      <div class="snake-canvas-wrap">
+        <canvas id="snake-canvas" width="460" height="460"></canvas>
+        <div id="snake-overlay">
+          <span class="so-icon">🐍</span>
+          <div class="so-title" id="so-title">SNAKE QUEST</div>
+          <div class="so-sub" id="so-sub">Answer coding questions to grow the snake! Wrong answers shrink it. Hit the wall and it shrinks too. Too small — BOOM! 💥</div>
+          <div class="so-xp" id="so-xp"></div>
+          <button class="so-btn" id="so-btn" onclick="startSnake()">▶ PLAY NOW</button>
+        </div>
+      </div>
+      <div class="snake-hint" id="sn-hint">🎮 Use ARROW KEYS or WASD to move · Answer before hitting walls!</div>
+    </div>
+    <div class="snake-side">
+      <div class="snake-q-box">
+        <div class="sq-label">🍎 EAT THE CORRECT APPLE</div>
+        <div class="sq-text" id="sq-text">Start the game to see questions!</div>
+        <div class="sq-opts" id="sq-opts"></div>
+      </div>
+      <div id="sq-reveal" style="display:none;margin-top:.6rem;width:100%;max-width:460px;"></div>
+      <div class="snake-panel" style="text-align:center">
+        <div class="sp-label">STREAK</div>
+        <div class="sp-val" style="color:var(--np);font-size:1.3rem" id="sn-streak">0 🔥</div>
+      </div>
+      <div class="snake-panel" style="font-size:.78rem;color:var(--td);line-height:1.7">
+        <div style="font-family:'Cinzel',serif;font-size:.62rem;color:var(--nc);margin-bottom:.4rem;letter-spacing:2px">HOW TO PLAY</div>
+        🍎 4 apples appear on canvas — each is an answer<br>
+        ✅ Eat the <b style="color:var(--ng)">correct apple</b> → Grow + 2× XP<br>
+        ❌ Eat the <b style="color:var(--np)">wrong apple</b> → Shrink!<br>
+        💥 Hit wall → Shrink!<br>
+        ☠️ Too small (3 cells) → 💥 BAMM!
+      </div>
+    </div>
+  </div>
+  <div class="snake-controls" style="margin-top:1rem">
+    <button class="sc-btn sc-back" onclick="showGamesHub()">← BACK TO GAMES</button>
+  </div>
+</div>
+
+</div>
+
+<!-- LEADERBOARD -->
+<div id="s-lb" class="scr">
+  <div style="max-width:680px;margin:0 auto;padding:2rem 1.5rem;">
+    <div class="sh" style="padding:1rem 0 1rem"><h2 class="st">🏆 GLOBAL <span>LEADERBOARD</span></h2><p class="ss">Rise through the ranks</p></div>
+    <div class="lb" id="lbl"></div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+
+
+<!-- ═══════════════════════════════════════
+     VAULT — Resource Library
+     ═══════════════════════════════════════ -->
+<div id="s-vault" class="scr">
+  <div class="sh">
+    <div class="st">📁 <span>My Vault</span></div>
+    <div class="section-divider"></div>
+    <div class="ss">Upload and manage your PDFs, images & Word documents</div>
+  </div>
+
+  <div class="vault-wrap">
+    <!-- Upload Zone -->
+    <div class="vault-upload-zone" id="vault-drop-zone">
+      <div class="vault-upload-inner">
+        <div class="vault-upload-icon">📤</div>
+        <div class="vault-upload-title">Drop files here</div>
+        <div class="vault-upload-sub">or click to browse</div>
+        <div class="vault-upload-types">PDF &nbsp;·&nbsp; JPG / PNG / GIF &nbsp;·&nbsp; DOCX / DOC</div>
+        <input type="file" id="vault-file-input" multiple
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.bmp,.svg"
+          style="display:none">
+        <button class="vault-browse-btn" onclick="document.getElementById('vault-file-input').click()">Browse Files</button>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="vault-filter-bar">
+      <button class="vault-filter-btn active" id="vf-all" onclick="vaultFilter('all')">All</button>
+      <button class="vault-filter-btn" id="vf-pdf" onclick="vaultFilter('pdf')">📄 PDFs</button>
+      <button class="vault-filter-btn" id="vf-image" onclick="vaultFilter('image')">🖼️ Images</button>
+      <button class="vault-filter-btn" id="vf-doc" onclick="vaultFilter('doc')">📝 Docs</button>
+    </div>
+
+    <!-- File Grid -->
+    <div class="vault-grid" id="vault-grid">
+      <div class="vault-empty" id="vault-empty">
+        <div style="font-size:3rem;margin-bottom:.8rem;opacity:.4">📂</div>
+        <div style="font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:2px;color:var(--td)">YOUR VAULT IS EMPTY</div>
+        <div style="font-size:.82rem;color:var(--td);margin-top:.4rem">Upload your first file above</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="vault-preview-modal" class="vault-modal hid">
+    <div class="vault-modal-box">
+      <div class="vault-modal-head">
+        <span id="vault-preview-name" style="font-family:'Cinzel',serif;font-size:.8rem;color:var(--ny);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
+        <button class="vault-modal-close" onclick="closeVaultPreview()">✕</button>
+      </div>
+      <div class="vault-modal-body" id="vault-preview-body"></div>
+      <div class="vault-modal-foot">
+        <button class="bh" onclick="downloadVaultFile()">⬇ Download</button>
+        <button class="brs" onclick="closeVaultPreview()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="s-ach" class="scr">
+  <div style="max-width:880px;margin:0 auto;padding:2rem 1.5rem;">
+    <div class="sh" style="padding:1rem 0 1rem"><h2 class="st">🏅 ACHIEVEMENT <span>BADGES</span></h2><p class="ss">Unlock them all, legend</p></div>
+    <div class="ag" id="ag"></div>
+  </div>
+</div>
+
+<!-- ADMIN SCREEN -->
+<div id="s-admin" class="scr">
+  <div style="max-width:880px;margin:0 auto;padding:2rem 1.5rem;">
+    <div class="sh" style="padding:1rem 0 1rem"><h2 class="st">🛡️ SYSTEM <span>ADMIN</span></h2><p class="ss">Manage settings and preferences</p></div>
+    
+    <div style="background:linear-gradient(145deg,#13110a,#0a0800);border:1px solid rgba(201,168,76,.3);border-radius:12px;padding:2rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--ny);">THEME SETTINGS</div>
+        <div style="font-size:.8rem;color:var(--td);margin-top:.4rem;">Switch between Light and Dark Mode</div>
+      </div>
+      <label class="t-switch" title="Toggle light/dark mode" style="transform:scale(1.3);">
+        <input type="checkbox" id="admin-theme-chk" onchange="document.getElementById('theme-chk').click(); this.checked = document.getElementById('theme-chk').checked;">
+        <div class="t-track"></div>
+        <div class="t-thumb"></div>
+      </label>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div style="background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:1.5rem;">
+        <div style="font-family:'Cinzel',serif;font-size:.8rem;color:var(--ny);margin-bottom:.5rem;">TOTAL USERS</div>
+        <div style="font-size:2.5rem;font-weight:700;font-family:'Cinzel Decorative',serif;color:var(--nc);">1,248</div>
+      </div>
+      <div style="background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:1.5rem;">
+        <div style="font-family:'Cinzel',serif;font-size:.8rem;color:var(--ny);margin-bottom:.5rem;">ACTIVE SESSIONS</div>
+        <div style="font-size:2.5rem;font-weight:700;font-family:'Cinzel Decorative',serif;color:var(--nc);">342</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div class="mo hid" id="mo">
+  <div class="mb">
+    <span class="mio" id="mi">🎉</span>
+    <div class="mtl" id="mtl">Well done!</div>
+    <div class="mbd" id="mbd"></div>
+    <div class="mxp" id="mxp"></div>
+    <button class="mc2" onclick="cM()">CONTINUE →</button>
+  </div>
+</div>
+
+<script src="scripts/main.js"></script>
+
+
+<!-- Cammy Chatbot Styles -->
+
+<!-- Cammy Chatbot -->
+<button id="nova-btn" onclick="toggleNova()" title="Chat with Cammy">
+  <div class="nova-avatar-btn">
+    <img src="data:image/jpeg;base64,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" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:50%;"/>
+  </div>
+  <div id="nova-notif">1</div>
+</button>
+
+<div id="nova-win">
+  <div class="nova-head">
+    <div class="nova-ava"><img src="data:image/jpeg;base64,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" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:50%;"/></div>
+    <div class="nova-info">
+      <div class="nova-name">CAMMY</div>
+      <div class="nova-status"><span class="nova-dot"></span>Your Learning Companion ✦</div>
+    </div>
+    <button class="nova-close" onclick="toggleNova()">✕</button>
+  </div>
+  <div class="nova-msgs" id="nova-msgs"></div>
+  <div class="nova-quick" id="nova-quick"></div>
+  <div class="nova-input-row">
+    <input id="nova-input" placeholder="Ask Cammy anything..." onkeydown="if (event.key === 'Enter') { sendNova(); }"/>
+    <button id="nova-send" onclick="sendNova()">➤</button>
+  </div>
+</div>
+
+<!-- Cammy RPG Dialogue Popup -->
+<div id="cammy-popup">
+  <button class="cp-close" onclick="hideCammyPopup()">✕</button>
+  <!-- Character art -->
+  <div class="cp-char-wrap">
+    <img src="data:image/jpeg;base64,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" class="cp-char-img" id="cammy-char-img"/>
+  </div>
+  <!-- Dialogue box -->
+  <div class="cp-dialogue">
+    <div class="cp-dialogue-header">
+      <span class="cp-name-tag">CAMMY</span>
+      <span class="cp-level-tag" id="cammy-popup-level">LVL <span id="cp-lvl-num">1</span></span>
+    </div>
+    <div class="cp-text" id="cammy-popup-text"></div>
+    <div class="cp-cursor">▮</div>
+  </div>
+</div>
+
+<script src="scripts/cammy.js"></script>
+</body>
+</html>
