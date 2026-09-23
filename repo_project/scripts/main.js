@@ -4159,7 +4159,7 @@ document.addEventListener('keydown', function(e) {
 // ════════════════════════════════════════
 
 const SUPA_URL = 'https://ulyubclloktbjlznoiet.supabase.co';
-const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVseXViY2xsb2t0Ympsem5vaWV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NDg1OTIsImV4cCI6MjA4OTEyNDU5Mn0.52YjOX9T2P34ySXFpxjtk6GSpjhZpbP8SAlIao0Ze6k';
+const SUPA_KEY = 'YOUR_SUPABASE_KEY_HERE';
 
 var SUPA_USER = null;
 
@@ -4537,7 +4537,7 @@ async function handleAuthSubmit(mode) {
   var emailVal = (document.getElementById('auth-email')||{}).value || '';
 
   // ── ADMIN INTERCEPT ──
-  if (username.trim() === 'admin1' && pass === 'adminrocks123') {
+  if (username.trim() === 'admin1' && pass === 'YOUR_ADMIN_PASSWORD_HERE') {
     var ov = document.getElementById('auth-modal');
     if (ov) ov.remove();
     openAdminPanel();
