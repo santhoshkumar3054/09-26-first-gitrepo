@@ -1284,3 +1284,29 @@ function deleteVaultChapter(fileId) {
 }
 
 // ═══════════════════════════════════════════════════════
+
+// ── REVOKE GEMINI API KEY FEATURE ──
+(function addRevokeGeminiKeyBtn() {
+  var head = document.querySelector('.nova-head');
+  if (head && !document.getElementById('revoke-gemini-btn')) {
+    var btn = document.createElement('button');
+    btn.id = 'revoke-gemini-btn';
+    btn.innerHTML = '🔑 Reset Key';
+    btn.style.cssText = 'background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; border-radius: 4px; cursor: pointer; font-size: 0.65rem; margin-right: 10px; padding: 2px 6px; font-family: "Cinzel", serif; transition: all 0.2s;';
+    btn.title = 'Delete Gemini API Key';
+    btn.onmouseover = function() { this.style.background = 'rgba(224,82,82,0.15)'; this.style.borderColor = 'rgba(224,82,82,0.4)'; this.style.color = '#e05252'; };
+    btn.onmouseout = function() { this.style.background = 'rgba(201,168,76,0.1)'; this.style.borderColor = 'rgba(201,168,76,0.3)'; this.style.color = '#c9a84c'; };
+    btn.onclick = function() {
+      if (!confirm('Are you sure you want to delete your saved Gemini API Key?')) return;
+      GEMINI_API_KEY = "";
+      sessionStorage.removeItem('GEMINI_API_KEY');
+      addCammyMsg("I've forgotten your Gemini API key! Next time you ask me something, I'll prompt you for a new one. 💜", 'bot', false);
+    };
+    var closeBtn = document.querySelector('.nova-close');
+    if (closeBtn) {
+      head.insertBefore(btn, closeBtn);
+    } else {
+      head.appendChild(btn);
+    }
+  }
+})();
